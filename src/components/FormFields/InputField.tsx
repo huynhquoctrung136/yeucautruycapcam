@@ -7,10 +7,9 @@ export interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   control: Control<any>;
   label?: string;
-  rows?: number;
 }
 
-export function InputField({ name, control, label, rows, type, ...inputProps }: InputFieldProps) {
+export function InputField({ name, control, label, type, ...inputProps }: InputFieldProps) {
   const {
     field: { value, onChange, onBlur, ref },
     fieldState: { invalid, error },
@@ -22,10 +21,8 @@ export function InputField({ name, control, label, rows, type, ...inputProps }: 
   return (
     <TextField
       fullWidth
-      multiline
-      type={type}
+      type= {type}
       size="small"
-      rows={rows}
       margin="normal"
       value={value}
       onChange={onChange}

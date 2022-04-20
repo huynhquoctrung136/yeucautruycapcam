@@ -1,26 +1,14 @@
-const link_users = `https://smarthatien.bakco.vn/api`;
-// const link_users = `https://localhost:44308/api`;
-const booking = `https://ht-cam-lookup-api-dev.bakco.vn/api`;
-// const booking = `https://localhost:44308`;
+const base_url = `http://localhost:62108/api`;
 
 export const apiLinks = {
     auth: {
-        login: `${link_users}/Auth/Admin/Login`,
-        signUp: `${link_users}/Auth/logout`
+        login: `https://user-management.bakco.vn/api/Users/Login`,
+        signUp: `https://user-management.bakco.vn/api/Users`
     },
-    serviceForm: {
-        get: `https://vientim-schedule.bakco.vn/api/ServiceForms`,
+    task: {
+        get: `${base_url}/Tasks`
     },
-    Examinations: {
-        post: `${booking}/Examinations`,
-        put: `${booking}/Examinations`,
-        get: `${booking}/Examinations`,
-        LyDo: `${booking}/Examinations/update/lydo`,
-        delete: `${booking}/Examinations`,
-        getById: `${booking}/Examinations`
-
-    },
-    Options: {
-        getByGroups: `${booking}/Options/getbygroups`
+    taskStatus: {
+        get: `${base_url}/TaskStatus`
     }
 }

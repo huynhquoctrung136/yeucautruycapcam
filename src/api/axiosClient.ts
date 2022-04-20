@@ -1,12 +1,11 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-import { TOKEN } from 'utils/constants';
-
-const token = localStorage.getItem(TOKEN) ?? sessionStorage.getItem(TOKEN);
 
 const axiosClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${token}`
+    Authorization: `Bearer ${localStorage.getItem(
+      'access_token'
+    )}`
   },
 });
 
